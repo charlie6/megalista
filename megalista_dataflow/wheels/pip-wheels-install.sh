@@ -1,3 +1,5 @@
+#!/bin/bash
+
 for FILE in ./wheels/packages/*.whl;
 do
   echo $FILE.
