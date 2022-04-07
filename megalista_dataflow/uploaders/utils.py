@@ -31,6 +31,9 @@ def get_ads_client(oauth_credentials, developer_token, customer_id):
         oauth_credentials.get_client_id(), oauth_credentials.get_client_secret(),
         oauth_credentials.get_refresh_token())
 
+    logging.basicConfig(level=logging.DEBUG, format='[%(asctime)s - %(levelname)s] %(message).5000s')
+    logging.getLogger('google.ads.googleads.client').setLevel(logging.DEBUG)
+    
     return GoogleAdsClient(
         oauth2_client, developer_token,
         login_customer_id=customer_id)
